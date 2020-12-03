@@ -102,6 +102,7 @@ const data = [
   </div> */
 
 function articleMaker(articleObj) {
+  debugger;
   const article = document.createElement('div'); // div of article
   article.classList.add('article');
 
@@ -119,19 +120,19 @@ function articleMaker(articleObj) {
   const paragraph3 = document.createElement('p');
   paragraph3.textContent = articleObj.thirdParagraph;
 
-  // const span = document.querySelector('span');
-  // span.classList.add('expandButton');
-  // span.textContent = '+'
+  const span = document.createElement('span');
+  span.classList.add('expandButton');
+  span.textContent = 'Expand'
 
-  // span.addEventListener('mouseover', event => {
-  //   article.classList.toggle('article-open')
-  // })
-
-  /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+   /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article. */
   // expandButton.addEventListener('click', event => {
   // article.classList.toggle('article-open');
   // })
+
+  span.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  })
 
 /* Now we need to append everything together with the proper structure
   <div class="article">
@@ -148,7 +149,7 @@ function articleMaker(articleObj) {
   article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
-  // article.appendChild(span);
+  article.appendChild(span);
 
     /* Step 3: Don't forget to return something from your function! */
   return article
@@ -161,9 +162,7 @@ const scaffold = document.querySelector('.articles')
 data.forEach(article => {
   const newArticle = articleMaker(article);
   scaffold.appendChild(newArticle);
-})
-
-
+});
 
 
 /*  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
