@@ -1,7 +1,7 @@
 // This is the data we will be using to create our articles. Look at it, then proceed to line 93.
 // OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
 // You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
-const data = [
+const articles = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
@@ -86,7 +86,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+  title: 'hello, friend',
+  date: 'May 9, 2015',
+
+  firstParagraph: 'Backup rootkit terminal boot up off the grid system code routing protocol Tor fsociety nodes malicious code emails wipe two-step verification. Boot up system log file intercepting traffic disconnect virus. IRC website boot up server farm. 100 terabytes timing out Wi-Fi, connect DDoS attack anonymous hack routing protocol delete breach system files traffic two-step verification compromised. Breach protocol offline disconnect website decrypt two-step verification sys admin boot up connect DDoS attack hack encryption Wi-Fi. Dat file boot up terminal fsociety timing out.',
+
+  secondParagraph: 'Network delete fsociety traffic. Exit nodes IRC gigabit speed fsociety Tor. Boot up decrypt reboot website brute-force disconnect. System intercepting traffic cyber security, two-step verification Wi-Fi exit nodes disconnect anonymous hack compromised. DNS DDoS attack backup, delete timing out IP data dump worm intercepting traffic Wi-Fi compromised. Wipe protocol data dump DDoS attack. Sys admin malware IP disconnect, anonymous website two-step verification virus malicious code password compromised Tor rootkit IRC log file.',
+
+  thirdParagraph: 'Tor terminal fiber connection system files virus offline traffic. Fiber connection delete 100 terabytes boot up website wipe all the data DNS. Anonymous fsociety IP terminal, disconnect encryption data center. Compromised computer malicious code, AFK dat file anonymous delete wipe server farm connect system files intercepting traffic RUDY attack. Malicious code hack DNS exit nodes compromised, network AFK data center. Network delete virus worm Wi-Fi system DNS fiber connection Tor data center operating system IRC cyber security timing out decrypt.'
+}
 ];
 /* Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
@@ -159,12 +169,13 @@ const scaffold = document.querySelector('.articles')
 
 /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html). */
-data.forEach(article => {
+articles.forEach(article => {
   const newArticle = articleMaker(article);
   scaffold.appendChild(newArticle);
 });
 
 
 /*  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+  Refresh the page to see the new article. */
+
+// Done.
