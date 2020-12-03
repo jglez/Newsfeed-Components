@@ -101,7 +101,7 @@ const data = [
     <span class="expandButton">+</span>
   </div> */
 
-function articleMaker(articleObj, ) {
+function articleMaker(articleObj) {
   const article = document.createElement('div'); // div of article
   article.classList.add('article');
 
@@ -119,15 +119,20 @@ function articleMaker(articleObj, ) {
   const paragraph3 = document.createElement('p');
   paragraph3.textContent = articleObj.thirdParagraph;
 
-  const expandButton = document.createElement('button'); // span with class of expandButton
-  expandButton = classList.add('expandButton');
-  expandButton = textContent = 'Click me'
+  // const span = document.querySelector('span');
+  // span.classList.add('expandButton');
+  // span.textContent = '+'
+
+  // span.addEventListener('mouseover', event => {
+  //   article.classList.toggle('article-open')
+  // })
 
   /*Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article. */
-  expandButton.addEventListener('click', event => {
-    article.classList.toggle('article-open');
-  })
+  // expandButton.addEventListener('click', event => {
+  // article.classList.toggle('article-open');
+  // })
+
 /* Now we need to append everything together with the proper structure
   <div class="article">
     <h2>{title of the article}</h2>
@@ -143,27 +148,20 @@ function articleMaker(articleObj, ) {
   article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
-  article.appendChild(expandButton);
+  // article.appendChild(span);
 
     /* Step 3: Don't forget to return something from your function! */
   return article
 }
 
+const scaffold = document.querySelector('.articles')
+
 /*Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html). */
-
-
-// console.log(data)
-// console.log(data[0])
-// console.log(data[1])
-// console.log(data[2])
-// console.log(data[3])
-
-console.log(articleMaker(data, 1))
-
-
-
-
+data.forEach(article => {
+  const newArticle = articleMaker(article);
+  scaffold.appendChild(newArticle);
+})
 
 
 
